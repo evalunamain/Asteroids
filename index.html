@@ -9,9 +9,10 @@
     margin: 0px;
   }
 
-  .game-canvas {
-    height: 500px;
-    width: 500px;
+  #game-canvas {
+    /*height: 750px;
+    width: 750px;*/
+    border: 2px solid black;
   }
 
   </style>
@@ -28,7 +29,8 @@
   <script>
   var canvasEl = document.getElementById("game-canvas");
   var ctx = canvasEl.getContext("2d")
-
+    Asteroids.Game.DIM_X = canvasEl.width = window.innerWidth;
+    Asteroids.Game.DIM_Y = canvasEl.height = window.innerHeight;
   var game = new Asteroids.Game();
   var gameView = new Asteroids.GameView(game, ctx);
   gameView.start();
